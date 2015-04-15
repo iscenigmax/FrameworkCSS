@@ -1,0 +1,109 @@
+/* Variables */
+/* Functions SASS */
+/* Resetting the Box Model */
+/* line 20, ../sass/grid_system.sass */
+.row,
+.column {
+  box-sizing: border-box;
+}
+
+/* Clearing Floats */
+/* line 26, ../sass/grid_system.sass */
+.row::before, .row::after {
+  content: " ";
+  display: table;
+}
+
+/* line 31, ../sass/grid_system.sass */
+.row::after {
+  clear: both;
+}
+
+/* Defining Columns */
+/* line 35, ../sass/grid_system.sass */
+.column {
+  position: relative;
+  float: left;
+}
+
+/* Creating Gutters */
+/* line 40, ../sass/grid_system.sass */
+.column + .column {
+  margin-left: 1.6%;
+}
+
+/* Calculating Column Widths */
+/* line 44, ../sass/grid_system.sass */
+.column-1 {
+  width: 6.86667%;
+}
+
+/* line 47, ../sass/grid_system.sass */
+.column-2 {
+  width: 15.33333%;
+}
+
+/* line 50, ../sass/grid_system.sass */
+.column-3 {
+  width: 23.8%;
+}
+
+/* line 53, ../sass/grid_system.sass */
+.column-4 {
+  width: 32.26667%;
+}
+
+/* line 56, ../sass/grid_system.sass */
+.column-5 {
+  width: 40.73333%;
+}
+
+/* line 59, ../sass/grid_system.sass */
+.column-6 {
+  width: 49.2%;
+}
+
+/* line 62, ../sass/grid_system.sass */
+.column-7 {
+  width: 57.66667%;
+}
+
+/* line 65, ../sass/grid_system.sass */
+.column-8 {
+  width: 66.13333%;
+}
+
+/* line 68, ../sass/grid_system.sass */
+.column-9 {
+  width: 74.6%;
+}
+
+/* line 71, ../sass/grid_system.sass */
+.column-10 {
+  width: 83.06667%;
+}
+
+/* line 74, ../sass/grid_system.sass */
+.column-11 {
+  width: 91.53333%;
+}
+
+/* line 77, ../sass/grid_system.sass */
+.column-12 {
+  width: 100%;
+}
+
+/* Optimizing for Mobile Devices */
+@media only screen and (max-width: 550px) {
+  /* line 83, ../sass/grid_system.sass */
+  .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
+    width: auto;
+    float: none;
+  }
+
+  /* line 86, ../sass/grid_system.sass */
+  .column + .column {
+    margin-left: 0;
+  }
+}
+/* http://www.sitepoint.com/understanding-css-grid-systems */

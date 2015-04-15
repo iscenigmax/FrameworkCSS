@@ -1,0 +1,89 @@
+/* Variables */
+$margin-grid-system : 1.6%
+$maximun-columns: 12
+
+/* Functions SASS */
+@function calculation-column-maximun-width()
+    $scw : (100 - ($margin-grid-system * ($maximun-columns - 1))) / $maximun-columns
+
+    @return $scw
+
+@function calculation-column-width($number)
+    $scw : calculation-column-maximun-width()
+    $cs : $number
+    $m : $margin-grid-system
+    $cw : ($scw * $cs) + ($m * ($cs - 1))
+
+    @return $cw
+
+/* Resetting the Box Model */
+.row,
+.column
+    box-sizing: border-box
+
+/* Clearing Floats */
+.row
+    &::before,
+    &::after
+        content: " "
+        display: table
+.row
+    &::after
+        clear: both
+
+/* Defining Columns */
+.column
+    position: relative
+    float: left
+
+/* Creating Gutters */
+.column + .column
+    margin-left: $margin-grid-system
+
+/* Calculating Column Widths */
+.column-1
+    width: calculation-column-width(1)
+
+.column-2
+    width: calculation-column-width(2)
+
+.column-3
+    width: calculation-column-width(3)
+
+.column-4
+    width: calculation-column-width(4)
+
+.column-5
+    width: calculation-column-width(5)
+
+.column-6
+    width: calculation-column-width(6)
+
+.column-7
+    width: calculation-column-width(7)
+
+.column-8
+    width: calculation-column-width(8)
+
+.column-9
+    width: calculation-column-width(9)
+
+.column-10
+    width: calculation-column-width(10)
+
+.column-11
+    width: calculation-column-width(11)
+
+.column-12
+    width: calculation-column-width(12)
+
+
+/* Optimizing for Mobile Devices */
+@media only screen and (max-width: 550px)
+    .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12
+        width: auto
+        float: none
+    .column + .column
+        margin-left: 0
+
+/* http://www.sitepoint.com/understanding-css-grid-systems */
